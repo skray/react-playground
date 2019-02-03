@@ -1,0 +1,13 @@
+.calculator {
+    width: 8rem;
+}
+.calculator .result {
+    text-align: right;
+    border: 1px solid black;
+}
+button {
+    width: 2rem;
+}
+button.zero {
+    width: 4rem;
+}

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import Home from './Home';
 import Weather from './Weather';
+import Calculator from './Calculator';
 
 
 class App extends Component {
@@ -20,11 +21,15 @@ class App extends Component {
                 <li className="nav-item">
                   <Link className="nav-link active text-dark" to="/weather">Weather</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link active text-dark" to="/calculator">Calculator</Link>
+                </li>
               </ul>
             </div>
             <div className="col-10">
               <Route path="/" exact component={Home} />
               <Route path="/weather" component={Weather} />
+              <Route path="/calculator" component={Calculator} />
             </div>
           </div>
         </div>
