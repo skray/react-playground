@@ -1,13 +1,14 @@
 .calculator {
     width: 8rem;
 }
-.calculator .result {
+.calculator .displayValue {
     text-align: right;
     border: 1px solid black;
+    overflow-x: hidden;
 }
 button {
     width: 2rem;
 }
-button.zero {
+#button0 {
     width: 4rem;
 }
