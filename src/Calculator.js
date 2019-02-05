@@ -2,7 +2,13 @@ import React from 'react';
 import './Calculator.css';
 
 function Button(props) {
-  return <button id={`button${props.value}`} onClick={(e) => props.onClick(props.value)}>{props.value}</button>
+  return <button
+    type='button'
+    className='btn btn-light bprder border-dark m-2'  
+    id={`button${props.value}`} 
+    onClick={(e) => props.onClick(props.value)}>
+    {props.value}
+    </button>
 }
 
 export default class Calculator extends React.Component {
@@ -105,8 +111,8 @@ export default class Calculator extends React.Component {
 
     return (
       <div>
-        <div className="calculator">
-          <div className="displayValue">{this.state.displayValue}</div>
+        <div className="calculator m-4 border border-dark rounded p-4 bg-light">
+          <div className="displayValue border border-dark rounded bg-white p-4 mb-4">{this.state.displayValue}</div>
           <div>
             <Button onClick={this.handleClear} value={'C'} />
             <Button onClick={this.handleSignChange} value={'+/-'} />

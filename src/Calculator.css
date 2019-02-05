@@ -1,14 +1,16 @@
 .calculator {
-    width: 8rem;
+    width: 27.2rem;
 }
 .calculator .displayValue {
     text-align: right;
-    border: 1px solid black;
     overflow-x: hidden;
+    font-size: 2rem;
 }
 button {
-    width: 2rem;
+    width: 5rem;
+    height: 3rem;
 }
 #button0 {
-    width: 4rem;
+    width: 11rem;
+    margin-right: .5rem !important;
 }
