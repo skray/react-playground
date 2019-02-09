@@ -1,7 +1,7 @@
 import React from 'react';
 function USMap(props) {
   return (
-  <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593" className="d-block ml-auto mr-auto mt-3 mb-5">
+  <svg xmlns="http://www.w3.org/2000/svg" width="959" height="593" className="mt-3 mb-5">
   <defs>
     <style type="text/css">
       {`
@@ -140,9 +140,9 @@ export default class Weather extends React.Component {
     }
 
     return (
-      <div>
+      <div className="text-center">
         <USMap onClick={this.locationClicked}/>
-        <h1 className="d-block w-50 ml-auto mr-auto mb-3">Weather Forecast for: { this.state.locationName }</h1>
+        <h1 className="mb-3">Weather Forecast for: { this.state.locationName }</h1>
         { content }
       </div>
     )
