@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import Weather from './Weather';
 import Calculator from './Calculator';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 class App extends Component {
   constructor(props) {
@@ -25,17 +26,12 @@ class App extends Component {
         
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <Link className="navbar-brand" onClick={() => this.handleLinkClick()} to="/react-playground">React Playground</Link>
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item dropdown d-lg-none">
-              <button className="btn nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Projects
-              </button>
-              <div className="dropdown-menu position-absolute" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" onClick={() => this.handleLinkClick('weather')} to="/react-playground/weather">Weather</Link>
-                <Link className="dropdown-item" onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
-              </div>
-            </li>
-          </ul>
+          <div className="navbar-nav mr-auto">
+            <DropdownButton id="dropdown-basic-button" title="Projects" variant='dark' className="nav-link btn-dark d-lg-none">
+              <Link className="dropdown-item" onClick={() => this.handleLinkClick('weather')} to="/react-playground/weather">Weather</Link>
+              <Link className="dropdown-item" onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
+            </DropdownButton>
+          </div>
           
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
@@ -51,10 +47,10 @@ class App extends Component {
             <div className="col-2 border-right min-vh-100 d-none d-lg-block">
               <ul className="nav flex-column mt-3 list-group list-group-flush">
                 <li className="nav-item">
-                  <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'weather' ? 'bg-secondary text-light' : ''}`} onClick={() => this.handleLinkClick('weather')} to="/react-playground/weather">Weather</Link>
+                  <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'weather' ? 'active' : ''}`} onClick={() => this.handleLinkClick('weather')} to="/react-playground/weather">Weather</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'calculator' ? 'bg-secondary text-light' : ''}`} onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
+                  <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'calculator' ? 'active' : ''}`} onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
                 </li>
               </ul>
             </div>
