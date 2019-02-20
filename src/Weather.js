@@ -112,6 +112,7 @@ export default class Weather extends React.Component {
       ]
     }
     this.cityClicked = this.cityClicked.bind(this);
+    this.citySelected = this.citySelected.bind(this);
 
     this.loadWeather(this.state.cities.find(city => city.selected).latlng);
   }
@@ -142,6 +143,12 @@ export default class Weather extends React.Component {
     this.setState({ locationName: clickedCity.name, cities });
     this.loadWeather(clickedCity.latlng);    
   }
+  
+  citySelected(event) {
+    let cityName = event.target.value;
+    let selectedCity = this.state.cities.find(city => city.name === cityName);
+    this.cityClicked(selectedCity);
+  }
 
   render() {
 
@@ -164,7 +171,10 @@ export default class Weather extends React.Component {
     return (
       <div className="text-center">
         <USMap cities={this.state.cities} onClick={this.cityClicked}/>
-        <h1 className="mb-3">Weather Forecast for: { this.state.locationName }</h1>
+        <h1 className="mb-3">Weather Forecast for: 
+          <select value={this.state.locationName} onChange={this.citySelected}>
+            {this.state.cities.map(city => <option value={city.name}>{city.name}</option>)}
+          </select></h1>
         { content }
       </div>
     )
