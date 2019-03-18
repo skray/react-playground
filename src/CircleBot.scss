@@ -1,0 +1,47 @@
+$boxSize: 40px;
+
+.command-input {
+  max-width: 35.6rem;
+}
+
+.box-row {
+
+  display: flex;
+
+  &:last-child {
+    .box {
+      border-bottom: 1px solid;
+    }
+  }
+
+  .box {
+    width: $boxSize;
+    height: $boxSize;
+    border-left: 1px solid;
+    border-top: 1px solid;
+
+    &:last-child {
+      border-right: 1px solid;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, md)) {
+      width: $boxSize / 2;
+      height: $boxSize / 2;
+    }
+  }
+
+  .center {
+    background-color: $cyan;
+  }
+
+  .robot {
+    background-color: $green;
+  }
+
+  .visited-even {
+    background-color: $gray-300;
+  }
+  .visited-odd {
+    background-color: $gray-500;
+  }
+}

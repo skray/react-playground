@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import Weather from './Weather';
 import Calculator from './Calculator';
+import CircleBot from './CircleBot';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
             <DropdownButton id="dropdown-basic-button" title="Projects" variant='dark' className="nav-link btn-dark d-lg-none">
               <Link className="dropdown-item" onClick={() => this.handleLinkClick('weather')} to="/react-playground/weather">Weather</Link>
               <Link className="dropdown-item" onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
+              <Link className="dropdown-item" onClick={() => this.handleLinkClick('circlebot')} to="/react-playground/circlebot">Circle Bot</Link>
             </DropdownButton>
           </div>
           
@@ -52,12 +54,16 @@ class App extends Component {
                 <li className="nav-item">
                   <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'calculator' ? 'active' : ''}`} onClick={() => this.handleLinkClick('calculator')} to="/react-playground/calculator">Calculator</Link>
                 </li>
+                <li className="nav-item">
+                  <Link className={`list-group-item list-group-item-action ${this.state.activeLink === 'circlebot' ? 'active' : ''}`} onClick={() => this.handleLinkClick('circlebot')} to="/react-playground/circlebot">Circle Bot</Link>
+                </li>
               </ul>
             </div>
             <div className="col col-lg-10 p-3">
               <Route path="/react-playground" exact component={Home} />
               <Route path="/react-playground/weather" component={Weather} />
               <Route path="/react-playground/calculator" component={Calculator} />
+              <Route path="/react-playground/circlebot" component={CircleBot} />
             </div>
           </div>
         </div>
